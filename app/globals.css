@@ -31,7 +31,7 @@ body::after {
   inset: 0;
   background: url("/image/crayon-overlay.png");
   opacity: 0.5;
-  mix-blend-mode: multiply;
+  mix-blend-mode: soft-light;
   pointer-events: none;
 }
 
@@ -63,7 +63,7 @@ body::after {
     box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.3);
   }
   &.lined.thick {
-    border: solid 7px #41403e;
+    border: solid 5px #41403e;
   }
   &.dotted.thick {
     border: dotted 5px #41403e;

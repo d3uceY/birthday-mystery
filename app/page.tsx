@@ -239,7 +239,7 @@ export default function Home() {
               <span className="font-medium text-5xl z-10 text-black">To me</span></h1>
           </div>
 
-          <div className="text-center text-2xl text-balance">
+          <div className="text-center text-2xl text-balance z-10 text-black">
             <span className="font-semibold">Hint:</span> Look for the clues
             <br />
             to find the code
@@ -270,7 +270,7 @@ export default function Home() {
             </button>
           </form>
         </div>
-         <div className="text-xs absolute bottom-3 right-0">
+         <div className="text-xs z-10 text-black absolute bottom-3 right-0">
             <p className="font-semibold">v1.0.0</p>
             <p>Made by yours truly</p>
             <a href="https://github.com/d3uceY" target="_blank" className="underline">Deuce (Jesse)</a>

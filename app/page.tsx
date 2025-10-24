@@ -180,9 +180,9 @@ export default function Home() {
   }, [errors]);
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen md:p-6 p-2">
       {isCorrect && (
-        <div className="bg-[rgb(0,0,0,0.5)] w-full h-full inset-0 fixed z-200 flex items-center justify-center">
+        <div className="bg-[rgb(0,0,0,0.5)] w-full h-full inset-0 fixed z-200 flex items-center justify-center p-4">
           <div className="bg-[#FDF7E7] rounded-lg p-4 max-w-sm">
             <img src="/image/dialog.png" alt="dialog" className="mb-4" />
             <div>
@@ -235,8 +235,8 @@ export default function Home() {
 
         <div className="flex flex-col gap-3 pt-16 main-content">
           <div>
-            <h1 className="flex flex-col text-center"><span className="font-semibold uppercase md:text-7xl text-4xl">Happy <br /> Birthday </span>
-              <span className="font-medium text-5xl">To me</span></h1>
+            <h1 className="flex flex-col text-center"><span className="font-semibold uppercase md:text-7xl text-4xl z-10 text-black">Happy <br /> Birthday </span>
+              <span className="font-medium text-5xl z-10 text-black">To me</span></h1>
           </div>
 
           <div className="text-center text-2xl text-balance">

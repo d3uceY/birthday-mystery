@@ -155,7 +155,15 @@ export default function Home() {
         "nawa for you o, brrooo",
         "this shit ain't working fam",
         "you must really want that 15k because wth?",
-        "wait first, make i call igwe"
+        "wait first, make i call igwe",
+        "i think it's time you give up, lil bro",
+        "just beg me for the answer",
+        "the hint is right there, bro",
+        "omo, e don be",
+        "e go enter bro, you do Hallelujah challenge",
+        "guy, calm down, you're making it too hard",
+        "bro, just type the code",
+        
       ]
 
       const randomizer = Math.floor(Math.random() * errorArray.length);

@@ -21,13 +21,14 @@ type FormData = z.infer<typeof schema>;
 export default function Home() {
   const [isReady, setIsReady] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [hintPress, setHintPress] = useState(0);
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const submitBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setIsReady(true);
   }, []);
-
 
   const shakeInput = () => {
     if (inputRef.current) {
@@ -47,6 +48,24 @@ export default function Home() {
       );
     }
   };
+
+  const handleHintPress = () => {
+    setHintPress((prev) => prev + 1);
+    if (submitBtnRef.current && hintPress > 16) {
+      gsap.fromTo(
+        submitBtnRef.current,
+        { y: 0 },
+        {
+          y: "-20vh",
+          duration: 0.3,
+          ease: "power1.inOut",
+          onComplete: () => {
+            gsap.set(submitBtnRef.current, { y: 0 });
+          }
+        }
+      );
+    }
+  }
 
 
   useGSAP(() => {
@@ -163,7 +182,7 @@ export default function Home() {
         "e go enter bro, you do Hallelujah challenge",
         "guy, calm down, you're making it too hard",
         "bro, just type the code",
-        
+
       ]
 
       const randomizer = Math.floor(Math.random() * errorArray.length);
@@ -248,7 +267,7 @@ export default function Home() {
           </div>
 
           <div className="text-center text-2xl text-balance z-10 text-black">
-            <span className="font-semibold">Hint:</span> Look for the clues
+            <span className="font-semibold" onClick={handleHintPress}>Hint:</span> Look for the clues
             <br />
             to find the code
           </div>
@@ -271,18 +290,26 @@ export default function Home() {
               </p>
             )}
             <button
+              ref={submitBtnRef}
               type="submit"
-              className="button p-2 focus:outline-0 lined thick uppercase font-semibold !bg-[#EFB45C]"
+              className="button p-2 focus:outline-0 lined thick uppercase font-semibold !bg-[#EFB45C] z-20"
             >
               Submit
             </button>
+            {
+              hintPress > 16 && (
+                <div className="text-center text-xs text-black relative bottom-12 z-10">
+                  8212735
+                </div>
+              )
+            }
           </form>
         </div>
-         <div className="text-xs z-10 text-black absolute bottom-3 right-0">
-            <p className="font-semibold">v1.0.0</p>
-            <p>Made by yours truly</p>
-            <a href="https://github.com/d3uceY" target="_blank" className="underline">Deuce (Jesse)</a>
-          </div>
+        <div className="text-xs z-10 text-black absolute bottom-3 right-0">
+          <p className="font-semibold">v1.0.0</p>
+          <p>Made by yours truly</p>
+          <a href="https://github.com/d3uceY" target="_blank" className="underline">Deuce (Jesse)</a>
+        </div>
       </main>
     </div>
   );

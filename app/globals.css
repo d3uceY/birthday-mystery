@@ -19,6 +19,20 @@
   }
 }
 
+@layer utilities {
+  /* Remove number input spinners in Chrome, Safari, Edge, Opera */
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Remove number input spinners in Firefox */
+  .no-spinner[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
 body {
   background-image: var(--background);
   color: var(--foreground);
@@ -84,6 +98,10 @@ h1{
   }
 }
 
+button{
+  cursor: pointer;
+}
+
 
 .handdraw {
  /*  can be shortened with border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;*/
@@ -93,4 +111,22 @@ h1{
   border-bottom-right-radius: 225px 15px;
   border-bottom-left-radius:15px 255px;
 
+}
+
+
+
+.baloon-img,
+.question-img,
+.bulb-img,
+.magnifier-img,
+.gift-img,
+.dashed-img,
+.xpaper-img,
+.main-content {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.ribbon-img{
+  opacity: 0;
 }
